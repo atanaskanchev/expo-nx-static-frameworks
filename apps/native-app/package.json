@@ -1,0 +1,32 @@
+{
+  "name": "rnfb-app",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "*",
+    "@expo/metro-config": "*",
+    "@expo/webpack-config": "*",
+    "@nrwl/expo": "*",
+    "@testing-library/jest-native": "*",
+    "@testing-library/react-native": "*",
+    "expo-build-properties": "*",
+    "expo-splash-screen": "*",
+    "expo-status-bar": "*",
+    "expo": "*",
+    "react-native-svg": "*",
+    "react-native-web": "*",
+    "react-native": "*",
+    "react": "*"
+  },
+  "scripts": {
+    "postinstall": "rm -r node_modules && cd ../../ && yarn install && npx nx sync-deps native-app && npx nx ensure-symlink native-app",
+    "prebuild": "npx expo prebuild --clean",
+    "build:ios": "yarn eas build --platform ios --local",
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9"
+  }
+}
