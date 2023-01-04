@@ -19,7 +19,7 @@
     "react": "*"
   },
   "scripts": {
-    "postinstall": "rm -r node_modules && cd ../../ && yarn install && npx nx sync-deps native-app && npx nx ensure-symlink native-app",
+    "postinstall": "rm -rf node_modules && cd ../../ && yarn install && npx nx sync-deps native-app && npx nx ensure-symlink native-app",
     "prebuild": "npx expo prebuild --clean",
     "build:ios": "yarn eas build --platform ios --local",
     "start": "expo start --dev-client",
